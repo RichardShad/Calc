@@ -3,10 +3,14 @@
 
 #include "Token.cxx"
 
-struct Operation{
+struct Op{
 	Token Operation;
 	Token LeftNumber;
 	Token RightNumber;
+	
+	Op(Token operation)
+		:Operation(operaton)
+	{}
 };
 
 #endif

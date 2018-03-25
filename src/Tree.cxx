@@ -5,8 +5,8 @@
 
 struct node{
 	Op 	Curent;
-	node* 	Left;
-	node* 	Right;
+	node* 		Left;
+	node* 		Right;
 
 	node(){
 		Left 	= nullptr;
@@ -15,6 +15,13 @@ struct node{
 	node(Op operation):Curent(operation){
 		Left 	= nullptr;
 		Right 	= nullptr;
-	};
+	}
+	~node(){
+		if(Left != nullptr)
+			delete Left;
+		if(Right != nullptr)
+			delete Right;
+	}
+};
 
 #endif
