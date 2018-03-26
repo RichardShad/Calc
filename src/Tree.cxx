@@ -4,7 +4,7 @@
 #include "Operation.cxx"
 
 struct node{
-	Op 	Curent;
+	Op 		Curent;
 	node* 		Left;
 	node* 		Right;
 	int		Position;

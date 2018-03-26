@@ -23,5 +23,8 @@ TokenParser.o: Token.o Operation.o TokenParser.cxx
 Tree.o: Operation.o Tree.cxx
 	g++ --std=c++17 -c Tree.cxx Operation.o
 
+CalculateTree.o: Tree.o Token.o Operation.o CalculateTree.cxx
+	g++ --std=c++17 -c CalculateTree.cxx Token.o Operation.o Tree.o
+
 clean: 
 	rm ./*.o
