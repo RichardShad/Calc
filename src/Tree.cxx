@@ -26,6 +26,20 @@ struct node{
 		if(Right != nullptr)
 			delete Right;
 	}
+	void insert(node *input){
+		if(input -> Position < Position){
+			if(Left == nullptr)
+				Left = input;
+			else
+				Left -> insert(input);
+		}
+		if(input -> Position > Position){
+			if(Right == nullptr)
+				Right = input;
+			else
+				Right -> insert(input);
+		}
+	}
 };
 
 #endif
