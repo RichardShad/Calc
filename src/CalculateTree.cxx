@@ -1,6 +1,7 @@
+#ifndef _CALCULATE_TREE_
+#define _CALCULATE_TREE_
+
 #include <functional>
-#include "Token.cxx"
-#include "Operation.cxx"
 #include "Tree.cxx"
 
 int CalculateTree(node* tree){
@@ -38,3 +39,4 @@ int CalculateTree(node* tree){
 	return calc();
 }
 
+#endif

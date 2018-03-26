@@ -1,8 +1,10 @@
-#include "Operation.cxx"
-#include "Tree.cxx"
+#ifndef _OPERATION_LIST_PARSER_
+#define _OPERATION_LIST_PARSER_
+
 #include <vector>
 #include <map>
 #include <set>
+#include "Tree.cxx"
 
 node *OperationListParser(std::vector<Op> OperationList){
 	
@@ -25,3 +27,5 @@ node *OperationListParser(std::vector<Op> OperationList){
 	}
 	return result;
 }
+
+#endif

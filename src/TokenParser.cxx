@@ -1,7 +1,6 @@
-#include "Tree.cxx"
-#include "Operation.cxx"
-#include "Token.cxx"
 #include <vector>
+#include "Token.cxx"
+#include "Operation.cxx"
 
 std::vector<Op> TokenParser(std::vector <Token> TokenList){
 
