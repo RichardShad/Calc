@@ -35,11 +35,11 @@ std::vector<Token> LineParser(std::string raw){
 				break;
 			}
 			case '(':{
-				add_prior++;
+				add_prior+=2;
 				break;
 			}
 			case ')':{
-				add_prior--;
+				add_prior+=2;
 				break;
 			}
 		}
