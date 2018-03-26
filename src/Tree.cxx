@@ -7,12 +7,16 @@ struct node{
 	Op 	Curent;
 	node* 		Left;
 	node* 		Right;
+	int		Position;
 
 	node(){
 		Left 	= nullptr;
 		Right 	= nullptr;
 	}
-	node(Op operation):Curent(operation){
+	node(Op operation, int position):
+		Curent(operation),
+		Position(position)	
+	{
 		Left 	= nullptr;
 		Right 	= nullptr;
 	}

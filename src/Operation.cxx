@@ -8,8 +8,9 @@ struct Op{
 	Token LeftNumber;
 	Token RightNumber;
 	
+	Op(){}
 	Op(Token operation)
-		:Operation(operaton)
+		:Operation(operation)
 	{}
 };
 

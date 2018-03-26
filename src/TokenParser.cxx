@@ -2,50 +2,36 @@
 #include "Operation.cxx"
 #include "Token.cxx"
 #include <vector>
-#include <map>
-#include <set>
 
-node *TokenParser(std::vector <Token> tokenList){
-	
-	node*					result;
-	std::set <int>				Priorities;
-	std::map <int, std::vector<int>>	elemntsByPriority; 
-	std::map <node*, int>			indexMap;
-	std::vector <Op>			operationList;
-	Token					lastToken;
-	Op*					curentOperation		= nullptr;
+std::vector<Op> TokenParser(std::vector <Token> TokenList){
 
-	for(auto curent : tokenList){
+	Token 			LastToken;
+	Op 			*CurentOperation = nullptr;
+	std::vector<Op> 	Result;
+
+	for(auto curent : TokenList){
 		if(curent.get_type() == Token::Type::Operation){
-			if(lastToken.get_type() == Token::Type::Number){
-				curentOperation = new Op(curent);
-				curentOperation -> LeftNumber = lastToken;
+			if(LastToken.get_type() == Token::Type::Number){
+				CurentOperation = new Op(curent);
+				CurentOperation -> LeftNumber = LastToken; 
 			}else{
 				throw /*TODO*/;
 			}
-		else if(curent.get_type() == Token::Type::Number){
-			if(lastToken.get_type() == Token::Type::Operation){
-				curentOperation -> RightNumber = curent;
-				operationList.push_back(*curentOperation);
-				delete curentOperation;
+		}else if(curent.get_type() == Token::Type::Number){
+			if(LastToken.get_type() == Token::Type::Number){
+				throw /*TODO*/;
+			}
+			if(LastToken.get_type() == Token::Type::Operation){
+				CurentOperation -> RightNumber = curent;
+				Result.push_back(*CurentOperation);
+				delete CurentOperation;
+				CurentOperation = nullptr;
 			}
 		}
-		lastToken = curent;
-	}	
-	for(auto iterator = operationList.begin(); iterator < operationList.end(); iterator++){
-		Priorities.insert(iterator -> Operation.get_priority());
-		elemntsByPriority[Operation.get_priority()].push_back(iterator - operationList.begin());
+		LastToken = curent;		
 	}
-	for(auto curentPriority : Priorities){
-		for(auto element = elemntsBypriority[curentPriority].rbegin(); element < elemntsBypriority[curentPriority].rend(); element++){
-			node *temp = new node(element);
-			if(result != nullptr){
-				for(node *inserter = result;;){
-					if(indexMap[inserter] < )
-				}
-			}
-			
-		}
-	} 
+	if(CurentOperation != nullptr)
+		throw /*TODO*/;
+	return Result;
 }
-		 
+
