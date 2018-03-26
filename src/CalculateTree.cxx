@@ -24,9 +24,6 @@ int CalculateTree(node* tree){
 						std::get<int>(tree -> Curent.RightNumber.get_value()));
 			}
 		};
-	if(tree -> Left == nullptr && tree -> Right == nullptr)
-		return calc();
-	else{
 		if(tree -> Left != nullptr){
 			Token temp(CalculateTree(tree -> Left));
 			tree -> Curent.LeftNumber = temp;
@@ -35,8 +32,9 @@ int CalculateTree(node* tree){
 			Token temp(CalculateTree(tree -> Right));
 			tree -> Curent.RightNumber = temp;
 		}
-	}
-	return calc();
+		int result = calc();
+		delete tree;
+		return result;
 }
 
 #endif
